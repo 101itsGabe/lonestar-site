@@ -14,9 +14,9 @@ export function TopBanner() {
       <Link href="/packages">Packages & Pricing</Link>
       <Link href="/princess-tea-parties">Princess Tea Parties</Link>
       <Link href="/corporate-community">Corporate & Community</Link>
-      <Link href="/events">Events</Link>
-      <Link href="/contact">Contact</Link>
-      <Link href="/apply">Apply</Link>
+      <button>Events</button>
+      <button>Contact</button>
+      <button>Apply</button>
     </div>
   );
 }
