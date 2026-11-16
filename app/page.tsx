@@ -122,8 +122,8 @@ export default function Home() {
             height={600}
           />
           <div>
-            <h2 style={{ fontSize: 30 }}>Magic with a Mission!</h2>
-            <p style={{ padding: 15 }}>
+            <h2>Magic with a Mission!</h2>
+            <p>
               At Lone Star Character Entertainment, we believe in meaningful
               magic that empowers children to be leaders. We also believe in
               being community leaders and making a difference. That’s why we
