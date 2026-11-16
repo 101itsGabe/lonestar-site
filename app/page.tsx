@@ -159,15 +159,8 @@ export default function Home() {
               <Image
                 src="/WebsitePhotos/alicePic.jpg"
                 alt="button photo"
-                width={200}
-                height={100}
-                style={{
-                  width: 200,
-                  height: 300, // the shorter height you want
-                  objectFit: "cover", // crop instead of stretching
-                  objectPosition: "center", // keep the bottom, cut from the top
-                  borderRadius: 15,
-                }}
+                width={600}
+                height={400}
               />
               <Link className="button-template" href="/princess-tea-parties">
                 Princess & Fantasy
@@ -179,13 +172,6 @@ export default function Home() {
                 alt="button photo"
                 width={200}
                 height={100}
-                style={{
-                  width: 200,
-                  height: 300, // the shorter height you want
-                  objectFit: "cover", // crop instead of stretching
-                  objectPosition: "center", // keep the bottom, cut from the top
-                  borderRadius: 15,
-                }}
               />
               <Link className="button-template" href="/characters">
                 Heros & Action
@@ -197,13 +183,6 @@ export default function Home() {
                 alt="button photo"
                 width={200}
                 height={100}
-                style={{
-                  width: 200,
-                  height: 300, // the shorter height you want
-                  objectFit: "cover", // crop instead of stretching
-                  objectPosition: "center", // keep the bottom, cut from the top
-                  borderRadius: 15,
-                }}
               />
               <Link className="button-template" href="/characters">
                 Mascot & Specialty

@@ -248,7 +248,7 @@ export default function Packages() {
                 Assistant
               </p>
               <p>Details</p>
-              <ul style={{ listStyleType: "disc" }}>
+              <ul style={{ listStyleType: "disc", padding: 36 }}>
                 <li>Grand Entrance and Meet & Greet</li>
                 <li>Sing-along Performance and/or Interactive Storytime</li>
                 <li>Freeze Dance Games</li>
@@ -537,7 +537,7 @@ function PackageCard({
         <h3>
           {time} Min - {numChildren}
         </h3>
-        <h1 style={{ fontWeight: "bold" }}>${price}</h1>
+        <h3 style={{ fontWeight: "bold" }}>${price}</h3>
         <p>{staffing}</p>
         <p>Additional Characters: ${addChars}</p>
         <h2 style={{ fontWeight: "bold", marginTop: 15 }}>Details</h2>
@@ -547,18 +547,13 @@ function PackageCard({
               {index === 0 ? (
                 <p
                   style={{
-                    padding: 3,
-                    textAlign: "left",
-                    fontSize: 14,
                     fontWeight: "bold",
                   }}
                 >
                   {info}
                 </p>
               ) : (
-                <p style={{ padding: 3, textAlign: "left", fontSize: 14 }}>
-                  {info}
-                </p>
+                <p>{info}</p>
               )}
             </li>
           ))}

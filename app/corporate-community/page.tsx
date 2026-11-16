@@ -15,6 +15,19 @@ export default function CorprateCommunity() {
     "Magicl Moments",
     "Fully Customizable",
   ]);
+  const [bookingServices, setServices] = useState([
+    "Meet & Greets",
+    "Story Time Performances",
+    "Tea Parties",
+    "Live Singing Performances",
+    "Games & Themed Experinces",
+    "Crafts",
+    "Dining Experinces",
+    "Makeovers & Face Painting",
+    "Custom Stage Performances",
+    "Other",
+  ]);
+  const [selectOptions, setSelected] = useState<string[]>([]);
   return (
     <div className="corprate-community">
       <TopBanner />
@@ -22,8 +35,8 @@ export default function CorprateCommunity() {
         <Image
           src="/WebsitePhotos/lcl-corprate.jpg"
           alt="spin corprate"
-          width={600}
-          height={400}
+          width={800}
+          height={600}
         />
         <div>
           <h1>We Make MAGIC for Your Business!</h1>
@@ -36,21 +49,23 @@ export default function CorprateCommunity() {
       </div>
       <div className="corprate-info">
         <ul>
-          {rotateStr.map((str, index) => (
-            <li key={index}>
-              <p>{str}</p>
-              {index <= rotateStr.length - 1 ? <p>☆</p> : null}
-            </li>
-          ))}
+          {Array.from({ length: 3 }).flatMap((_, r) =>
+            rotateStr.map((str, index) => (
+              <li key={`${r}-${index}`}>
+                <p>{str}</p>
+                {index <= rotateStr.length - 1 ? <p>☆</p> : null}
+              </li>
+            )),
+          )}
         </ul>
         <button className="button-template">Book your Dream Event!</button>
         <div>
           <div>
-            <p style={{ fontSize: 18 }}>
+            <p style={{ fontSize: 28 }}>
               Turn Your Business into a Storybook Experience!
             </p>
             <h2>The Most Magical Events in Austin TX!</h2>
-            <p style={{ fontSize: 24 }}>
+            <p>
               Themed Character Events drive brand new audiences to your space &
               bring your business a new line of revenue! By partnering with us,
               you take the guesswork out of creating new experiences for your
@@ -58,7 +73,7 @@ export default function CorprateCommunity() {
               you!
             </p>
             <h3>WE OFFER…</h3>
-            <p style={{ fontSize: 20, width: "50%" }}>
+            <p style={{ width: "50%" }}>
               Meet & Greets, Singing Performances, Makeovers, Crafts, Dining
               Experiences, Tea Parties, & MORE!
             </p>
@@ -264,7 +279,7 @@ export default function CorprateCommunity() {
         <div className="corprate-booking-form">
           <p>Name</p>
           <div>
-            <div>
+            <div className="corprate-name-input">
               <p>First Name</p>
               <input
                 id="fname"
@@ -273,7 +288,7 @@ export default function CorprateCommunity() {
                 onChange={(e) => setFName(e.target.value)}
               />
             </div>
-            <div>
+            <div className="corprate-name-input">
               <p>Last Name</p>
               <input
                 id="fname"
@@ -306,6 +321,30 @@ export default function CorprateCommunity() {
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
           />
+
+          <div className="corprate-options">
+            {bookingServices.map((obj, index) => (
+              <label key={obj}>
+                <input
+                  type="checkbox"
+                  checked={selectOptions.includes(obj)}
+                  onChange={(e) => {
+                    if (!selectOptions.includes(obj)) {
+                      selectOptions.push(obj);
+                    } else {
+                      const i = selectOptions.findIndex((str) => {
+                        str === obj;
+                      });
+                      selectOptions.splice(i, 1);
+                    }
+                  }}
+                />
+                <p>{obj}</p>
+              </label>
+            ))}
+          </div>
+          <p style={{ fontSize: 24 }}>Tell us about your event!</p>
+          <textarea></textarea>
         </div>
       </div>
     </div>

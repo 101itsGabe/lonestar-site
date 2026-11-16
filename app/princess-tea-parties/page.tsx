@@ -1,7 +1,49 @@
+"use client";
 import { TopBanner } from "../src/banner";
 import Image from "next/image";
+import { useState } from "react";
 
 export default function PrincessTeaParties() {
+  const [ifDeluxeProvide, setDeluxeP] = useState(false);
+  const [ifDeluxeCustomer, setDC] = useState(false);
+  const [ifDeluxeIternary, setDIbtn] = useState(false);
+  const [ifStandardProvide, setSP] = useState(false);
+  const [ifStandardCustomer, setSC] = useState(false);
+  const [ifStandardIternary, setSI] = useState(false);
+  const [deluxeDetails, setDeluxe] = useState([
+    "1 Hour of Setup before Party Start Time",
+    "Tea Table and Chairs, Table Linens and Table Decor, China, Tea Cups, and Place Settings for up to 16 Participating Children",
+    "A Customized Menu of Tea Sandwiches, Fruit, Desserts, and Drinks for Children",
+    "A Princess Makeover Station with a Costumed Fairy Godmother to lead princess makeovers",
+    "Princess Costume Dress Up Station with dress-up dresses for little princesses to wear for the duration of the party",
+    "Princess Costume Dress Up Station with dress-up dresses for little princesses to wear for the duration of the party",
+    "Red Carpet",
+    "Sound System, Microphones, Crafts, and Games",
+  ]);
+  const [deluxeItinerary, setDI] = useState([
+    "Princess Grand Entrance and Meet & Greet",
+    "Makeover Fairy Godmother  to perform makeovers on guests one by one",
+    "Tea Party & Etiquette Lessons",
+    "Interactive Storytime",
+    "Princess Lessons and Princess Parade",
+    "Live Singing Performance",
+    "Princess Dance Party",
+    "Freeze Dance Games",
+    "Red Carpet Fashion Show",
+    "Themed Pass The Parcel Game",
+    "Deluxe Princess Craft",
+    "Customized Princess Coloring Pages",
+    "Photo Time with the Princess at a themed Photo Backdrop",
+    `Singing “Happy Birthday”`,
+    "Special Coronation Ceremony Including a Tiara & Official Princess Certificate",
+  ]);
+
+  const [standardDetails, setSDetails] = useState([
+    "30 Minutes of Setup before Party Start Time",
+    "Tea Table Linens and Decor, China, Tea Cups, and Place Settings for up to 12 Participating Children",
+    "A Standard Menu of Tea Sandwiches, Fruit, Desserts, and Drinks for Children",
+    "Sound System, Microphones, Craft, and Games",
+  ]);
   return (
     <div style={{ backgroundColor: "rgb(44, 5, 46)" }}>
       <TopBanner />
@@ -83,6 +125,47 @@ export default function PrincessTeaParties() {
             <p>
               <u>Addtional Princesses: </u>$200
             </p>
+            <button
+              onClick={() => {
+                setDeluxeP(!ifDeluxeProvide);
+              }}
+            >
+              What We Provide
+            </button>
+            {ifDeluxeProvide ? (
+              <ul>
+                {deluxeDetails.map((obj, index) => (
+                  <li>{obj}</li>
+                ))}
+              </ul>
+            ) : null}
+            <button
+              onClick={() => {
+                setDC(!ifDeluxeCustomer);
+              }}
+            >
+              What you provide
+            </button>
+            {ifDeluxeCustomer ? (
+              <p>
+                Space for the tea table, makeover station, photo backdrop, and
+                craft table.
+              </p>
+            ) : null}
+            <button
+              onClick={() => {
+                setDIbtn(!ifDeluxeIternary);
+              }}
+            >
+              Deluxe Tea Party Internary
+            </button>
+            {ifDeluxeIternary ? (
+              <ul>
+                {deluxeItinerary.map((obj, index) => (
+                  <li key={index}>{obj}</li>
+                ))}
+              </ul>
+            ) : null}
           </div>
           <div className="tea-party-standard">
             <h3>Standard Princess Tea Party Package</h3>
@@ -105,6 +188,20 @@ export default function PrincessTeaParties() {
               <u>Additional Princesses: </u>{" "}
               <strong>Not available for this package</strong>
             </p>
+            <button
+              onClick={() => {
+                setSP(!ifStandardProvide);
+              }}
+            >
+              What we provide
+            </button>
+            {ifStandardProvide ? (
+              <ul>
+                {standardDetails.map((obj, index) => (
+                  <li>{obj}</li>
+                ))}
+              </ul>
+            ) : null}
           </div>
         </div>
         <div className="tea-party-compare">

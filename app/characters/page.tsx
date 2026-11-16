@@ -4,6 +4,7 @@ import Image from "next/image";
 import placeholder from "./placeholder.jpg";
 import { TopBanner } from "../src/banner";
 import logo from "../logoWhite.png";
+import { Footer } from "../src/footer";
 export default function Characters() {
   const filePath = path.join(process.cwd(), "app/characters", "characters.txt");
   const info = fs.readFileSync(filePath, "utf-8").split(/\r?\n/);
@@ -68,27 +69,7 @@ export default function Characters() {
         <MascotList allChars={allChars} />
         <SpecialList allChars={allChars} />
       </div>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "center",
-        }}
-      >
-        <Image src={logo} alt="logo" width={250} height={250} />;
-      </div>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          gap: 30,
-          justifyContent: "center",
-        }}
-      >
-        <p>Follow Me</p>
-        <p>Office House</p>
-        <p>Contact</p>
-      </div>
+      <Footer />
     </div>
   );
 }

@@ -98,6 +98,14 @@ body {
   padding-bottom: 2px;
 }
 
+.home-character-offers > img {
+  width: 400px;
+  height: 500px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 15px;
+}
+
 .home-character-options {
   display: flex;
   flex-direction: column;
@@ -141,15 +149,15 @@ body {
 
 .home-standards > div > div > h3 {
   font-weight: bold;
-  padding-bottom: 20px;
+  padding-bottom: 25px;
   font-size: 50px;
 }
 
 .home-standards > div > div > p {
   padding: 5px;
-  width: 70%;
+  width: 85%;
   text-align: center;
-  font-size: 35px;
+  font-size: 30px;
 }
 
 .home-founder {
@@ -206,6 +214,9 @@ body {
 .home-party-planning > div {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
 
 .home-party-planning > div > img {
@@ -219,17 +230,21 @@ body {
   flex-direction: column;
   background-color: gray;
   height: 60%;
-  padding: 12px;
+  padding: 16px;
   justify-content: center;
   align-items: center;
-  gap: 5px;
+  gap: 15px;
   border-radius: 15px;
 }
 
 .home-party-planning > div > div > p {
-  font-size: 10px;
+  font-size: 20px;
   width: 50%;
-  padding: 5px;
+  padding: 10px;
+}
+
+.home-party-planning > div > div > h3 {
+  font-size: 30px;
 }
 
 .home-party-planning > div > div > input {
@@ -455,6 +470,24 @@ body {
   font-family: "Fredoka", sans-serif;
 }
 
+.packages > h2 {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.packages > h3 {
+  font-size: 24px;
+}
+
+.packages > p {
+  font-size: 24px;
+}
+
+.packages > ul > li > p {
+  font-size: 20px;
+  text-align: left;
+}
+
 .package-images {
   width: 100%;
   border-radius: 15px;
@@ -468,7 +501,15 @@ body {
   align-items: center;
   text-align: center;
   font-family: "Fredoka", sans-serif;
-  gap: 10px;
+  gap: 24px;
+  background-color: var(--brand-light-pink);
+  border-radius: 15px;
+  padding: 20px;
+}
+
+.packages-text > p {
+  font-size: 24px;
+  width: 70%;
 }
 
 .packages-text > h2 {
@@ -514,18 +555,27 @@ body {
   justify-content: center;
   border-radius: 15px;
   background-color: var(--brand-pink);
-  padding: 25px;
   gap: 20px;
 }
 .deluxe-packages > h2 {
-  font-size: large;
+  font-size: 40px;
   font-weight: bold;
+  font-family: var(--header-font);
+}
+
+.deluxe-packages > p {
+  font-size: 24px;
 }
 .deluxe-packages-container > img {
   border-radius: 15px;
 }
 .deluxe-packages > ul {
   text-align: left;
+}
+
+.deluxe-packages > ul > li {
+  font-size: 24px;
+  padding-left: 25px;
 }
 
 .button-template {
@@ -656,7 +706,6 @@ body {
   border-radius: 15px;
   gap: 20px;
   width: 55%;
-  justify-content: center;
   align-items: center;
   padding: 30px;
 }
@@ -723,10 +772,6 @@ body {
   padding: 20px;
 }
 
-.package-playdates > p {
-  max-width: 75%;
-  font-size: 12px;
-}
 .package-playdates-info {
   display: flex;
   flex-direction: column;
@@ -740,7 +785,7 @@ body {
 }
 
 .package-playdates-info > p {
-  font-size: 14px;
+  font-size: 24px;
   padding: 10px;
   max-width: 75%;
 }
@@ -792,12 +837,13 @@ body {
 .corprate-info > ul > li {
   display: flex;
   flex-direction: row;
-  gap: 10px;
+  gap: 8px;
   white-space: nowrap;
 }
 
 .corprate-info > ul > li > p {
-  padding: 15px;
+  padding: 16px;
+  font-size: 24px;
 }
 
 .corprate-header {
@@ -846,6 +892,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 .corprate-info > div {
@@ -867,10 +914,11 @@ body {
   font-size: 75px;
   font-family: var(--header-font);
   padding-left: 30px;
+  text-align: center;
 }
 
 .corprate-info > div > div > h3 {
-  font-size: 25px;
+  font-size: 32px;
   font-family: var(--paragraph-font);
   padding: 20px;
   font-weight: bold;
@@ -879,13 +927,15 @@ body {
 .corprate-info > div > div > p {
   font-family: var(--paragraph-font);
   text-align: center;
+  padding: 24px;
+  font-size: 28px;
 }
 .corprate-info > ul {
   display: flex;
   flex-direction: row;
   padding: 10px;
   animation: scroll-left 20s linear infinite;
-  width: max-content;
+  width: fit-content;
   font-family: var(--paragraph-font);
 }
 @keyframes scroll-left {
@@ -893,7 +943,7 @@ body {
     transform: translateX(0);
   }
   to {
-    transform: translateX(-50%);
+    transform: translateX(-25%);
   } /* half = exactly one copy of the list */
 }
 
@@ -906,6 +956,7 @@ body {
   background-color: white;
   color: var(--brand-purple);
   border-radius: 10px;
+  padding-bottom: 24px;
 }
 
 .corprate-special > h2 {
@@ -917,7 +968,7 @@ body {
 .corprate-special > p {
   font-size: 24px;
   font-family: var(--paragraph-font);
-  padding: 5;
+  padding-bottom: 10px;
 }
 
 .corprate-special-traits {
@@ -932,15 +983,15 @@ body {
 }
 
 .corprate-special-traits > div > h3 {
-  font-size: 30px;
+  font-size: 32px;
   font-family: var(--header-font);
   padding: 10px;
 }
 
 .corprate-special-traits > div > p {
   font-family: var(--paragraph-font);
-  font-size: 16px;
-  padding: 5px;
+  font-size: 24px;
+  padding: 15px;
 }
 
 .corprate-services {
@@ -957,24 +1008,33 @@ body {
 }
 
 .corprate-services > div > img {
-  width: 150px; /* circle size */
-  height: 150px; /* must equal width for a true circle */
+  width: 250px; /* circle size */
+  height: 250px; /* must equal width for a true circle */
   object-fit: cover; /* fill the circle, cropping the extra */
   object-position: center;
   border-radius: 50%;
   padding: 10px;
 }
-.corprate-services > div > div {
+
+.corprate-services > div > div > p {
+  font-size: 24px;
+}
+
+.corprate-services > div > div > h3 {
+  font-size: 32px;
+}
+.corprate-name-input {
   display: flex;
   flex-direction: column;
 }
 
-.corprate-services > div > div > h3 {
-  font-size: 30px;
+.corprate-name-input > h3 {
+  font-size: 34px;
 }
 
-.corprate-services > div > div > p {
+.corprate-name-input > p {
   width: 65%;
+  font-size: 20px;
 }
 
 .corprate-booking {
@@ -982,6 +1042,21 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  gap: 10px;
+}
+
+.corprate-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 10px;
+}
+
+.corprate-options > label {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  padding: 5px;
+  font-size: 20px;
 }
 
 .corprate-booking-info {
@@ -990,6 +1065,10 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
+  background-color: var(--brand-blue);
+  gap: 20px;
+  border-radius: 15px;
+  padding: 10px;
 }
 
 .corprate-booking-info > h3 {
@@ -1011,13 +1090,13 @@ body {
   gap: 10px;
   margin-right: 30px;
 }
-.corprate-booking-form > div {
-  display: flex;
-  flex-direction: row;
-  padding: 1px;
-  gap: 10px;
-}
 
+.corprate-booking-form > textarea {
+  width: 100%;
+  height: 150px;
+  border: 2px solid white;
+  border-radius: 15px;
+}
 .corprate-booking-form > div > div > input {
   border: 2px solid rgb(255, 255, 255);
   border-radius: 10px;
@@ -1028,7 +1107,6 @@ body {
   border: 2px solid rgb(255, 255, 255);
   border-radius: 10px;
   padding: 5px;
-  width: 100%;
 }
 
 .footer {
